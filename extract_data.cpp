@@ -14,6 +14,7 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
         std::cout << "Not file";
         exit(0);
     }
+    std::ofstream out;
     while(!input.eof()) {
         std::string name;
         std::string ign;
@@ -69,6 +70,7 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
 //std::cout<<"hello\n";
     std::ofstream output;
     output.open("Couples.csv", std::ios::trunc);
+    out.open("Couples2.csv", std::ios::trunc);
     while(!input.eof()) {
         std::string name;
         std::string ign;
@@ -152,17 +154,20 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
             if(t == 1) {
                 temp1->set_commitstatus();
                 std::cout << name <<" " << temp1->getname() << std::endl;
-                output << name << "," <<temp1->getname()<<"\n";
+                output << name << " , " <<temp1->getname()<<"\n";
+                out << name << " , " << temp1->getname()<<" , "<<temp1->get_budget()<<" , "<<budget<<" , "<<temp1->get_intel()<<" , "<<intelli<<" , "<<temp1->get_attract()<<" , "<<attract<<" , "<<type<<"\n";
             }
             else if(t == 2) {
                 temp3->set_commitstatus();
                 std::cout << name <<" " << temp3->getname() << std::endl;
-                output << name << "," <<temp3->getname()<<"\n";
+                output << name << " , " <<temp3->getname()<<"\n";
+                out << name << " , " << temp3->getname()<<" , "<<temp3->get_budget()<<" , "<<budget<<" , "<<temp3->get_intel()<<" , "<<intelli<<" , "<<temp3->get_attract()<<" , "<<attract<<" , "<<type<<"\n";
             }
             else if(t == 3) {
                 temp2->set_commitstatus();
                 std::cout << name <<" " << temp2->getname() << std::endl;
-                output << name << "," <<temp2->getname()<<"\n";
+                output << name << " , " <<temp2->getname()<<"\n";
+                out << name << " , " << temp2->getname()<<" , "<<temp2->get_budget()<<" , "<<budget<<" , "<<temp2->get_intel()<<" , "<<intelli<<" , "<<temp2->get_attract()<<" , "<<attract<<" , "<<type<<"\n";
             }
     }
     output.close();
