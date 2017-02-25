@@ -1,6 +1,6 @@
 #include "Geeky.h"
 #include <string>
-
+//test
 Geeky::Geeky(std::string Boy_Name, int Boy_Atr, int Boy_Budget, int Boy_Intel, int Req_Attract)
 {
     this->Boy_Name = Boy_Name;
