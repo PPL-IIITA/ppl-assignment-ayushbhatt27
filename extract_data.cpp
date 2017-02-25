@@ -67,6 +67,8 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
    input.open("Girls.csv", std::ios::in);
 
 //std::cout<<"hello\n";
+    std::ofstream output;
+    output.open("Couples.csv", std::ios::trunc);
     while(!input.eof()) {
         std::string name;
         std::string ign;
@@ -147,33 +149,21 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
                 }
             }
         }
-        //std::cout << temp2->getname();
-        //std::cout<<"hello\n";
-        //std::cout << temp3->getname();
             if(t == 1) {
                 temp1->set_commitstatus();
-                //std::cout<<"hello1\n";
                 std::cout << name <<" " << temp1->getname() << std::endl;
+                output << name << "," <<temp1->getname()<<"\n";
             }
             else if(t == 2) {
-                //std::cout<<"hello2\n";
                 temp3->set_commitstatus();
                 std::cout << name <<" " << temp3->getname() << std::endl;
+                output << name << "," <<temp3->getname()<<"\n";
             }
             else if(t == 3) {
-                //std::cout<<"hello3\n";
                 temp2->set_commitstatus();
-                //std::cout<<temp3->getname();
                 std::cout << name <<" " << temp2->getname() << std::endl;
-                //std::cout<<"hello3\n";
+                output << name << "," <<temp2->getname()<<"\n";
             }
-            /*std::vector<Girl_Choosy>::iterator ig1;
-            std::vector<Girl_Choosy>::iterator ig2;
-            std::vector<Girl_Choosy>::iterator ig3;
-            if(t != 0) {
-                for(ig1 = gc.begin(); ig1 != gc.end(); ig1++) {
-                    if()
-                }
-            }*/
     }
+    output.close();
 }
