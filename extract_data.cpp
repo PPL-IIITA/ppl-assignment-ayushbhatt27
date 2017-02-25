@@ -1,12 +1,19 @@
 #include "extract_data.h"
 #include <fstream>
 #include <iostream>
-
+#include <cstdlib>
 void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generous> &genb, std::vector<Girl_Choosy> &gc,
                              std::vector<Girl_Normal> &gn, std::vector<Girl_Desperate> &gd)
 {
+    //std::cout << "hello\n";
     std::ifstream input;
     input.open("Boys.csv", std::ios::in);
+    //std::cout<<"hello\n";
+    if(!input)
+    {
+        std::cout << "Not file";
+        exit(0);
+    }
     while(!input.eof()) {
         std::string name;
         std::string ign;
@@ -16,6 +23,7 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
         int min_req;
         int type;
         input >> name >> ign >> attract >> ign >> intelli >> ign >> budget >> ign >> min_req >> ign >> type;
+        //std::cout<<name<<std::endl;
         if(type == 1) {
             Miser m (name, attract, budget, intelli, min_req);
             mb.push_back(m);
@@ -25,12 +33,14 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
             gb.push_back(g);
         }
         else {
-            Generous gen (name, attract,budget, intelli,  min_req);
+            Generous gen (name, attract, budget, intelli, min_req);
             genb.push_back(gen);
         }
     }
+    //std::cout<<"hello\n";
     input.close();
     input.open("Girls.csv", std::ios::in);
+    //std::cout<<"hello\n";
     while(!input.eof()) {
         std::string name;
         std::string ign;
@@ -54,9 +64,9 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
         }
     }
     input.close();
-    input.open("Girls.csv", std::ios::in);
+   input.open("Girls.csv", std::ios::in);
 
-
+//std::cout<<"hello\n";
     while(!input.eof()) {
         std::string name;
         std::string ign;
@@ -66,6 +76,7 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
         int type;
         int pre;
         input >> name >> ign >> attract >> ign >> intelli >> ign >> budget >> ign >> type >> ign >> pre;
+
         std::vector<Miser>::iterator it1;
         std::vector<Geeky>::iterator it2;
         std::vector<Generous>::iterator it3;
@@ -76,9 +87,9 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
         int mbud = 0;
         int mint = 0;
         int t = 0;
-        std::cout<<"hello\n";
+        //std::cout<<"hello\n";
         for(it1 = mb.begin(); it1 != mb.end(); it1++) {
-            if(it1->get_budget() > budget && it1->get_commitstatus() != 1) {
+            if(it1->get_budget() > budget && it1->get_commitstatus() == 0) {
                 if(pre == 2 && it1->get_budget() > mbud) {
                         mbud = it1->get_budget();
                         temp1 = it1;
@@ -96,9 +107,9 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
                 }
             }
         }
-        std::cout<<"hello\n";
+        //std::cout<<"hello\n";
         for(it2 = gb.begin(); it2 != gb.end(); it2++) {
-             if(it2->get_budget() >= budget && it2->get_commitstatus() != 1) {
+             if(it2->get_budget() > budget && it2->get_commitstatus() == 0) {
                 if(pre == 2 && it2->get_budget() > mbud) {
                         mbud = it2->get_budget();
                         temp2 = it2;
@@ -116,9 +127,9 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
                 }
             }
         }
-        std::cout<<"hello\n";
+        //std::cout<<t <<std::endl;
         for(it3 = genb.begin(); it3 != genb.end(); it3++) {
-             if(it3->get_budget() >= budget && it3->get_commitstatus() != 1) {
+             if(it3->get_budget() > budget && it3->get_commitstatus() == 0) {
                 if(pre == 2 && it3->get_budget() > mbud) {
                         mbud = it3->get_budget();
                         temp3 = it3;
@@ -137,21 +148,32 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
             }
         }
         //std::cout << temp2->getname();
-        std::cout<<"hello\n";
+        //std::cout<<"hello\n";
+        //std::cout << temp3->getname();
             if(t == 1) {
-                //temp1->set_commitstatus();
-                std::cout<<"hello1\n";
+                temp1->set_commitstatus();
+                //std::cout<<"hello1\n";
                 std::cout << name <<" " << temp1->getname() << std::endl;
             }
-            if(t == 2) {
-                std::cout<<"hello2\n";
-                //temp2->set_commitstatus();
-                std::cout << name <<" " << temp2->getname() << std::endl;
-            }
-            if(t == 3) {
-                std::cout<<"hello3\n";
+            else if(t == 2) {
+                //std::cout<<"hello2\n";
                 temp3->set_commitstatus();
                 std::cout << name <<" " << temp3->getname() << std::endl;
             }
+            else if(t == 3) {
+                //std::cout<<"hello3\n";
+                temp2->set_commitstatus();
+                //std::cout<<temp3->getname();
+                std::cout << name <<" " << temp2->getname() << std::endl;
+                //std::cout<<"hello3\n";
+            }
+            /*std::vector<Girl_Choosy>::iterator ig1;
+            std::vector<Girl_Choosy>::iterator ig2;
+            std::vector<Girl_Choosy>::iterator ig3;
+            if(t != 0) {
+                for(ig1 = gc.begin(); ig1 != gc.end(); ig1++) {
+                    if()
+                }
+            }*/
     }
 }
