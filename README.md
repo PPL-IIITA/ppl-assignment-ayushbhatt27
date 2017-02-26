@@ -8,7 +8,7 @@
 
 #OVERVIEW
 
-Implemented question 1 and question 2 in c++.
+Implemented question 1 and question 2 in c++ without inheritance.
 
 #TOOLS USED:
 
@@ -46,7 +46,14 @@ To generate gift data compile and run
 
 #DOCUMENTATION:
 
-###doc1 contains documentation for question 1
+###doc1 contains documentation for question 1.
 
-###doc2 contains documentation for question 2
+###doc2 contains documentation for question 2.
  
+#CLASS DIAGRAM:
+
+###classdiagram.jpeg contains image of class diagram.
+
+#EXTRAS:
+
+###log.csv contains gift exchange data(timestamp, girl name, boy name, gift name)
