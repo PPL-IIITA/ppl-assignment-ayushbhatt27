@@ -8,6 +8,11 @@
 #include "Couples.h"
 #include <vector>
 
+bool cmp1(Gifts &g1, Gifts &g2)
+{
+    return g1.getprice() < g2.getprice();
+}
+
 void gifts_dist(std::vector<Gifts> &g, std::vector<Couples> &c)
 {
 
@@ -23,21 +28,20 @@ void gifts_dist(std::vector<Gifts> &g, std::vector<Couples> &c)
         int data2;
         input >> name >> ign >> price >> ign >> value >> ign >> type >> ign >> data1 >> ign >> data2;
         Gifts g1(name,price,value,type,data1,data2);
-        //std::cout << g1.getname()<<"\n";
         g.push_back(g1);
     }
-    //std::sort(g.begin(),g.end());
+    std::sort(g.begin(),g.end(),cmp1);
     input.close();
     input.open("Couples2.csv", std::ios::in);
     std::ofstream output;
     output.open("log.csv", std::ios::out);
-    while(!input.eof()) {
-        std::string name1;
+    std::string name1;
+    while(input >> name1) {
         std::string ign;
         std::string name2;
-        int happy;
-        int ghappy = 0;
-        int bhappy = 0;
+        double happy;
+        double ghappy = 0;
+        double bhappy = 0;
         int comp = 0;
         int bud;
         int maint;
@@ -48,43 +52,48 @@ void gifts_dist(std::vector<Gifts> &g, std::vector<Couples> &c)
         int type;
         std::vector<Gifts>::iterator it;
         int sum = 0;
+        int boytype;
         int valuesum = 0;
-        input >> name1 >> ign >> name2 >> ign >> bud >> ign >> maint >> ign >> int1 >> ign >> int2 >> ign >> att1 >> ign >> att2 >> ign >> type;
+        input >> ign >> name2 >> ign >> bud >> ign >> maint >> ign >> int1 >> ign >> int2 >> ign >> att1 >> ign >> att2 >> ign >> type >> ign >> boytype;
         //std::cout <<name1<<"\n";
         it = g.begin();
-        int serial = 0;
-        output << name1 << " , " << name2 << "\n";
+        int serial = 1;
+        int lux = 0;
+        int gmain = maint;
         while(maint > 0) {
             sum += it->getprice();
+            if(it->gettype() == 2)
+                lux = lux + it->getprice();
             valuesum += (it->getvalue());
             maint = maint - it->getprice();
-            output << serial<<" , "<<it->getname() <<"\n";
+            output << serial <<" , "<< name1 << " , " << name2 <<" , "<<it->getname() <<"\n";
             it->setalloc();
             it++;
             serial++;
         }
-
-        while(it->gettype() != 2 && it != g.end())
-                it++;
-        if(type == 1 && it != g.end()) {
-            output << serial<<" , "<<it->getname() <<"\n";
-            sum += it->getvalue() * 2;
+        if(type == 1) {
+            sum = sum + lux - gmain;
             ghappy = log(sum);
             serial++;
         }
         if(type == 2) {
-            sum = sum + valuesum;
+            sum = sum + valuesum - gmain;
             ghappy = sum;
         }
         if(type == 3)
-            ghappy = pow(2.71,sum);
+            ghappy = pow(2.71828,(sum - gmain));
 
-        bhappy = bud - sum;
+        if(boytype == 1)
+            bhappy = abs(bud - sum);
+        if(boytype == 2)
+            bhappy = ghappy;
+        if(boytype == 3)
+            bhappy = int2;
+
         happy = bhappy + ghappy;
         comp = abs(bud - maint) + abs(att1 - att2) + abs(int1 - int2);
         Couples c1(name1,name2,happy,comp);
         c.push_back(c1);
-        //std::cout << c[0].getnameb() <<"\n";
     }
     input.close();
     output.close();

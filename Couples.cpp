@@ -16,7 +16,7 @@ std::string Couples::getnameg()
 {
     return this->nameg;
 }
-int Couples::gethappy()
+double Couples::gethappy()
 {
     return this->happy;
 }

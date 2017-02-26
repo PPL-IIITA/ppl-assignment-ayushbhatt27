@@ -6,13 +6,13 @@ class Couples{
     private:
         std::string nameb;
         std::string nameg;
-        int happy;
+        double happy;
         int comp;
     public:
         Couples(std::string, std::string, int, int);
         std::string getnameb();
         std::string getnameg();
-        int gethappy();
+        double gethappy();
         int getcomp();
 };
 

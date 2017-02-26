@@ -93,7 +93,7 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
         int t = 0;
         //std::cout<<"hello\n";
         for(it1 = mb.begin(); it1 != mb.end(); it1++) {
-            if(it1->get_budget() > budget && it1->get_commitstatus() == 0) {
+            if(it1->get_budget() > budget && it1->get_commitstatus() == 0 && it1->get_reqattract() < attract) {
                 if(pre == 2 && it1->get_budget() > mbud) {
                         mbud = it1->get_budget();
                         temp1 = it1;
@@ -113,7 +113,7 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
         }
         //std::cout<<"hello\n";
         for(it2 = gb.begin(); it2 != gb.end(); it2++) {
-             if(it2->get_budget() > budget && it2->get_commitstatus() == 0) {
+             if(it2->get_budget() > budget && it2->get_commitstatus() == 0 && it2->get_reqattract() < attract) {
                 if(pre == 2 && it2->get_budget() > mbud) {
                         mbud = it2->get_budget();
                         temp2 = it2;
@@ -133,7 +133,7 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
         }
         //std::cout<<t <<std::endl;
         for(it3 = genb.begin(); it3 != genb.end(); it3++) {
-             if(it3->get_budget() > budget && it3->get_commitstatus() == 0) {
+             if(it3->get_budget() > budget && it3->get_commitstatus() == 0 && it3->get_reqattract() < attract) {
                 if(pre == 2 && it3->get_budget() > mbud) {
                         mbud = it3->get_budget();
                         temp3 = it3;
@@ -155,19 +155,19 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
                 temp1->set_commitstatus();
                 std::cout << name <<" " << temp1->getname() << std::endl;
                 output << name << " , " <<temp1->getname()<<"\n";
-                out << name << " , " << temp1->getname()<<" , "<<temp1->get_budget()<<" , "<<budget<<" , "<<temp1->get_intel()<<" , "<<intelli<<" , "<<temp1->get_attract()<<" , "<<attract<<" , "<<type<<"\n";
+                out << name << " , " << temp1->getname()<<" , "<<temp1->get_budget()<<" , "<<budget<<" , "<<temp1->get_intel()<<" , "<<intelli<<" , "<<temp1->get_attract()<<" , "<<attract<<" , "<<type<<" , "<<t<<"\n";
             }
             else if(t == 2) {
                 temp3->set_commitstatus();
                 std::cout << name <<" " << temp3->getname() << std::endl;
                 output << name << " , " <<temp3->getname()<<"\n";
-                out << name << " , " << temp3->getname()<<" , "<<temp3->get_budget()<<" , "<<budget<<" , "<<temp3->get_intel()<<" , "<<intelli<<" , "<<temp3->get_attract()<<" , "<<attract<<" , "<<type<<"\n";
+                out << name << " , " << temp3->getname()<<" , "<<temp3->get_budget()<<" , "<<budget<<" , "<<temp3->get_intel()<<" , "<<intelli<<" , "<<temp3->get_attract()<<" , "<<attract<<" , "<<type<<" , "<<t<<"\n";;
             }
             else if(t == 3) {
                 temp2->set_commitstatus();
                 std::cout << name <<" " << temp2->getname() << std::endl;
                 output << name << " , " <<temp2->getname()<<"\n";
-                out << name << " , " << temp2->getname()<<" , "<<temp2->get_budget()<<" , "<<budget<<" , "<<temp2->get_intel()<<" , "<<intelli<<" , "<<temp2->get_attract()<<" , "<<attract<<" , "<<type<<"\n";
+                out << name << " , " << temp2->getname()<<" , "<<temp2->get_budget()<<" , "<<budget<<" , "<<temp2->get_intel()<<" , "<<intelli<<" , "<<temp2->get_attract()<<" , "<<attract<<" , "<<type<<" , "<<t<<"\n";;
             }
     }
     output.close();

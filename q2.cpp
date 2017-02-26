@@ -4,35 +4,54 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
-/*
-Initial build
-Cmp functions for sorting missing
-*/
+#include <fstream>
+bool cmp1(Couples &c1, Couples &c2)
+{
+    return c1.gethappy() > c2.gethappy();
+}
+bool cmp2(Couples &c1, Couples &c2)
+{
+    return c1.getcomp() < c2.getcomp();
+}
 int main()
 {
     std::vector<Gifts> g;
     std::vector<Couples> c;
     gifts_dist(g,c);
-    //std::sort(c.begin(),c.end());
+    std::sort(c.begin(),c.end(),cmp1);
     int k;
     std::cout << "Enter value of k:\n";
     std::cin >> k;
     int temp = k;
     std::vector<Couples>::iterator it;
     it = c.begin();
-    std::cout << "HAPPINESS:\n";
-    while(temp--) {
-        std::cout <<it->getnameb() << " " << it->getnameg() << "\n";
+    int vsize = c.size();
+    if(vsize < k)
+        k = vsize;
+    std::cout <<k<<" MOST HAPPIEST COUPLES:\n";
+    while(temp-- && it != c.end()) {
+        std::cout <<it->getnameb() << " " << it->getnameg() << " "<< it->gethappy()<<"\n";
         it++;
     }
-    //std::sort(c.begin(),c.end());
+    std::sort(c.begin(),c.end(),cmp2);
     it = c.begin();
     temp = k;
-    std::cout << "COMPATIBLE:\n";
-    while(temp--) {
-        std::cout <<it->getnameb() << " " << it->getnameg() << "\n";
+    std::cout <<"\n";
+    std::cout <<k<<" MOST COMPATIBLE COUPLES:\n";
+    while(temp-- && it != c.end()) {
+        std::cout <<it->getnameb() << " " << it->getnameg() <<" " << it->getcomp()<< "\n";
         it++;
     }
-
+    /*std::ifstream input2;
+    input2.open("log.csv", std::ios::in);
+    while(!input2.eof()) {
+        int timestamp;
+        std::string name1;
+        std::string name2;
+        std::string gift;
+        std::string ign;
+        input2 >> timestamp >> ign >> name1 >> ign >> name2 >> ign >> gift;
+        std::cout << timestamp <<" " << name1 << " " << name2 << " " << gift << "\n";
+    }*/
     return 0;
 }
