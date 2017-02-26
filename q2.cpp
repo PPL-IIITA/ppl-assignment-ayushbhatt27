@@ -33,7 +33,7 @@ int main()
         k = vsize;
     std::cout <<k<<" MOST HAPPIEST COUPLES:\n";
     while(temp-- && it != c.end()) {
-        std::cout <<it->getnameb() << " " << it->getnameg() << " "<< it->gethappy()<<"\n";
+        std::cout <<it->getnameb() << " " << it->getnameg()<<"\n";
         it++;
     }
     std::sort(c.begin(),c.end(),cmp2);
@@ -42,7 +42,7 @@ int main()
     std::cout <<"\n";
     std::cout <<k<<" MOST COMPATIBLE COUPLES:\n";
     while(temp-- && it != c.end()) {
-        std::cout <<it->getnameb() << " " << it->getnameg() <<" " << it->getcomp()<< "\n";
+        std::cout <<it->getnameb() << " " << it->getnameg() <<"\n";
         it++;
     }
     std::cout << "\n\nGIFTS EXCHANGED BETWEEN COUPLES:\n\n";
