@@ -1,7 +1,6 @@
-
 #include "Girl_Normal.h"
 #include <string>
-
+//*Constructor function Normal Girl.
 Girl_Normal::Girl_Normal(std::string Girl_Name, int Girl_Atr, int Girl_Budget, int Girl_Intel, int pre)
 {
     this->Girl_Name = Girl_Name;
@@ -11,12 +10,12 @@ Girl_Normal::Girl_Normal(std::string Girl_Name, int Girl_Atr, int Girl_Budget, i
     this->Commit_Status = 0;
     this->pre = pre;
 }
-
+//*returns Girl name.
 std::string Girl_Normal::getname()
 {
     return this->Girl_Name;
 }
-
+//*returns attractiveness.
 int Girl_Normal::get_attract()
 {
     return this->Girl_Atr;

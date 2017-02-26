@@ -7,12 +7,13 @@
 #include "Gifts.h"
 #include "Couples.h"
 #include <vector>
+//*cmp1 to sort gift vectors in increasing order of their prices.
 
 bool cmp1(Gifts &g1, Gifts &g2)
 {
     return g1.getprice() < g2.getprice();
 }
-
+//*allocate gifts.
 void gifts_dist(std::vector<Gifts> &g, std::vector<Couples> &c)
 {
 

@@ -5,10 +5,12 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+//*cmp1 to sort couple vectors in decreasing order of happiness.
 bool cmp1(Couples &c1, Couples &c2)
 {
     return c1.gethappy() > c2.gethappy();
 }
+//*cmp2 to sort couple vectors in increasing order of compatibility.
 bool cmp2(Couples &c1, Couples &c2)
 {
     return c1.getcomp() < c2.getcomp();
@@ -17,6 +19,7 @@ int main()
 {
     std::vector<Gifts> g;
     std::vector<Couples> c;
+    //*gifts_dist called to allocate gifts.
     gifts_dist(g,c);
     std::sort(c.begin(),c.end(),cmp1);
     int k;
@@ -42,7 +45,8 @@ int main()
         std::cout <<it->getnameb() << " " << it->getnameg() <<" " << it->getcomp()<< "\n";
         it++;
     }
-    /*std::ifstream input2;
+    //*to print gift log file.
+    std::ifstream input2;
     input2.open("log.csv", std::ios::in);
     while(!input2.eof()) {
         int timestamp;
@@ -52,6 +56,6 @@ int main()
         std::string ign;
         input2 >> timestamp >> ign >> name1 >> ign >> name2 >> ign >> gift;
         std::cout << timestamp <<" " << name1 << " " << name2 << " " << gift << "\n";
-    }*/
+    }
     return 0;
 }

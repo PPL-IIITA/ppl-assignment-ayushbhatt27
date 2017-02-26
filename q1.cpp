@@ -8,7 +8,7 @@
 #include <vector>
 #include "extract_data.h"
 
-//*This generates Couples using boys.csv and girls.csv   .
+//*prints Couples formed using boys and girls csv files.
 
 int main()
 {
@@ -19,8 +19,6 @@ int main()
     std::vector<Girl_Choosy> gc;
     std::vector<Girl_Normal> gn;
     std::vector<Girl_Desperate> gd;
-    //std::cout << "hello";
     extract(mb, gb, genb, gc, gn, gd);
-    //std::cout << mb[0].getname();
     return 0;
 }

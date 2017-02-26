@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iostream>
 #include <cstdlib>
+//*extract function scans boys csv file and fills boy objects similarly it scans girls csv files and fills girl objects then it scans girl files and try to find a boyfriend according to constraints.
+
 void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generous> &genb, std::vector<Girl_Choosy> &gc,
                              std::vector<Girl_Normal> &gn, std::vector<Girl_Desperate> &gd)
 {
@@ -70,7 +72,9 @@ void extract(std::vector<Miser> &mb, std::vector<Geeky> &gb, std::vector<Generou
 //std::cout<<"hello\n";
     std::ofstream output;
     output.open("Couples.csv", std::ios::trunc);
+    //* couples2 store extra details about couples.
     out.open("Couples2.csv", std::ios::trunc);
+    //* scans girls csv file and make couples.
     while(!input.eof()) {
         std::string name;
         std::string ign;

@@ -1,8 +1,6 @@
-/*
-type of boy = {1=Miser, 2=Generous, 3=Geek}
-type of girl = {1=Choosy, 2=Normal, 3=desperate}
-prefernce type of girl = {1=attraciveness, 2=rich, 3=intelligent}
-*/
+//*type of boy = {1=Miser, 2=Generous, 3=Geek} type of girl = {1=Choosy, 2=Normal, 3=desperate} prefernce type of girl = {1=attraciveness, 2=rich, 3=intelligent}.
+
+//*generates random boys and girls and their respective details.
 
 #include <iostream>
 #include <fstream>

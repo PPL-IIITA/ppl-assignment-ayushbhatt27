@@ -4,9 +4,8 @@
 #include <string>
 #include <ctime>
 
-/*
-Gift types = {1=essential,2=luxury,3=utility}
-*/
+//*Gift types = {1=essential,2=luxury,3=utility} generates random gifts.
+
 
 std::string to_string(int number){
     std::string number_string = "";
