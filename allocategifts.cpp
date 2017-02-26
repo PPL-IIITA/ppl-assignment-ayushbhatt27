@@ -19,15 +19,15 @@ void gifts_dist(std::vector<Gifts> &g, std::vector<Couples> &c)
 
     std::ifstream input;
     input.open("Gifts.csv", std::ios::in);
-    while(!input.eof()) {
-        std::string name;
+    std::string name;
+    while(input >> name) {
         std::string ign;
         int price;
         int value;
         int type;
         int data1;
         int data2;
-        input >> name >> ign >> price >> ign >> value >> ign >> type >> ign >> data1 >> ign >> data2;
+        input >> ign >> price >> ign >> value >> ign >> type >> ign >> data1 >> ign >> data2;
         Gifts g1(name,price,value,type,data1,data2);
         g.push_back(g1);
     }

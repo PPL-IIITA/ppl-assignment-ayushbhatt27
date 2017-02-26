@@ -45,17 +45,18 @@ int main()
         std::cout <<it->getnameb() << " " << it->getnameg() <<" " << it->getcomp()<< "\n";
         it++;
     }
+    std::cout << "\n\nGIFTS EXCHANGED BETWEEN COUPLES:\n\n";
     //*to print gift log file.
-    /*std::ifstream input2;
+    std::ifstream input2;
     input2.open("log.csv", std::ios::in);
-    while(!input2.eof()) {
-        int timestamp;
+    int timestamp;
+    while(input2 >> timestamp) {
         std::string name1;
         std::string name2;
         std::string gift;
         std::string ign;
-        input2 >> timestamp >> ign >> name1 >> ign >> name2 >> ign >> gift;
+        input2 >> ign >> name1 >> ign >> name2 >> ign >> gift;
         std::cout << timestamp <<" " << name1 << " " << name2 << " " << gift << "\n";
-    }*/
+    }
     return 0;
 }
