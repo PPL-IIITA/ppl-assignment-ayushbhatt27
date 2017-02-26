@@ -8,6 +8,8 @@
 #include <vector>
 #include "extract_data.h"
 
+//*This generates Couples using boys.csv and girls.csv   .
+
 int main()
 {
     //std::cout <<"hello";

@@ -91,7 +91,7 @@ void gifts_dist(std::vector<Gifts> &g, std::vector<Couples> &c)
             bhappy = int2;
 
         happy = bhappy + ghappy;
-        comp = abs(bud - maint) + abs(att1 - att2) + abs(int1 - int2);
+        comp = abs(bud - gmain) + abs(att1 - att2) + abs(int1 - int2);
         Couples c1(name1,name2,happy,comp);
         c.push_back(c1);
     }
