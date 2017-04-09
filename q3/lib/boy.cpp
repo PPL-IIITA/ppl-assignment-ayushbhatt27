@@ -1,6 +1,8 @@
 #include "Boy.h"
 #include <string>
 
+
+
 Boy::Boy(std::string Boy_Name, int Boy_Atr, int Boy_Budget, int Boy_Intel, int Req_Attract)
 {
     this->Boy_Name = Boy_Name;

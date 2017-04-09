@@ -6,6 +6,8 @@
     name,attractiveness,Budget,Intelligence,Minimum attractiveness required in a girl.
 
 */
+
+
 class Boy {
     private:
         std::string Boy_Name;
