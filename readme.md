@@ -29,7 +29,7 @@ Name - Ayush Bhatt
 ## Building and running
 ### Build System: Windows 10.
 ### Question 3 (first move to the main project folder where  q3-q8 folders are present i.e. 
-### /ppl-assignment-ayushbhatt27-submission-2 )
+	### /ppl-assignment-ayushbhatt27-submission-2 )
 ```
 $ cd q3
 $ g++ q3.cpp lib/*.cpp
@@ -37,7 +37,7 @@ $ a.exe
 
 ```
 ### Question 4 (first move to the main project folder where  q3-q8 folders are present i.e. 
-### /ppl-assignment-ayushbhatt27-submission-2 )
+	### /ppl-assignment-ayushbhatt27-submission-2 )
 ```
 $ cd q4
 $ g++ q4.cpp lib/*.cpp
@@ -45,7 +45,7 @@ $ a.exe
 
 ``` 
 ### Question 5 (first move to the main project folder where  q3-q8 folders are present i.e. 
-### /ppl-assignment-ayushbhatt27-submission-2 )
+	### /ppl-assignment-ayushbhatt27-submission-2 )
 ```
 $ cd q5
 $ g++ q5.cpp lib/*.cpp
@@ -53,7 +53,7 @@ $ a.exe
 
 ``` 
 ### Question 6 (first move to the main project folder where  q3-q8 folders are present i.e. 
-### /ppl-assignment-ayushbhatt27-submission-2 )
+	### /ppl-assignment-ayushbhatt27-submission-2 )
 ```
 $ cd q6
 $ g++ q6.cpp lib/*.cpp
@@ -61,7 +61,7 @@ $ a.exe
 
 ``` 
 ### Question 7 (first move to the main project folder where  q3-q8 folders are present i.e. 
-### /ppl-assignment-ayushbhatt27-submission-2 )
+	### /ppl-assignment-ayushbhatt27-submission-2 )
 ```
 $ cd q7
 $ g++ q7.cpp lib/*.cpp
@@ -69,7 +69,7 @@ $ a.exe
 
 ``` 
 ### Question 8 (first move to the main project folder where  q3-q8 folders are present i.e. 
-### /ppl-assignment-ayushbhatt27-submission-2 )
+	### /ppl-assignment-ayushbhatt27-submission-2 )
 ```
 $ cd q8
 $ g++ q8.cpp lib/*.cpp
