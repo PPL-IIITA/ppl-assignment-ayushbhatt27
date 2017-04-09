@@ -29,6 +29,8 @@ Name - Ayush Bhatt
 * Open the index.html file in a web browser.
 * The documentation is opened on the web browser.
 
+# WARNING: Will only rum on windows 10 cmd.
+
 ## Building and running
 ### Build System: Windows 10.
 
@@ -83,4 +85,5 @@ $ a.exe
 
 ``` 
 
+## Note:All input values are assigned to variables inside main functions directly.
 
