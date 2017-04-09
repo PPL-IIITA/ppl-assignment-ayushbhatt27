@@ -32,7 +32,7 @@ Name - Ayush Bhatt
 ## Building and running
 ### Build System: Windows 10.
 
- Add gcc complier to path in environmrnt variables so that g++ command works on cmd.
+ Add gcc complier to path in environment variables so that g++ command works on cmd.
  
 ### Question 3 (first move to the main project folder where  q3-q8 folders are present i.e. 
 ### /ppl-assignment-ayushbhatt27-submission-2 )
