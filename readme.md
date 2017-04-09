@@ -29,7 +29,7 @@ Name - Ayush Bhatt
 * Open the index.html file in a web browser.
 * The documentation is opened on the web browser.
 
-# WARNING: Will only rum on windows 10 cmd.
+# WARNING: Will only run on windows 10 cmd.
 
 ## Building and running
 ### Build System: Windows 10.
